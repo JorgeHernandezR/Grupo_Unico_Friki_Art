@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: #b7e3f7;
+}
+
+header {
+  background-color: #346075
+    /* #346075 #B7E3F7 #6CC9F5  #576C75 #559FC2 #1e3742*/;
+  color: white;
+  padding: 10px;
+}
+
+#titulo {
+  text-align: center;
+}
+
+/*Estilo para los elemntos de la lista del nav que se mostrarab horizontales*/
+.lihorizontal {
+  display: inline-block;
+  margin-right: 10%;
+}
+
+#listaNav input {
+    width: 80%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+footer {
+  background-color: #1e3742;
+  padding: 10px;
+}
+
+footer p,
+footer ul,
+footer div {
+  display: inline-block;
+}
+
+#iconosV {
+  display: none;
+}
+
+footer div {
+  width: 70%;
+}
+
+i {
+  font-size: 30px;
+}

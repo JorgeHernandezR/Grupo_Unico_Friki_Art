@@ -9,21 +9,36 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
     <link rel="stylesheet" href="css/normalize.css" />
-    <title>Document</title>
+    <title>Friki-Art</title>
   </head>
+
+  <style>
+    a {
+      text-decoration: none;
+    }
+  </style>
   <body>
     <header>
-      <h1>Friki Art</h1>
+      <h1 id="titulo">Friki Art</h1>
       <nav>
-        <ul>
-          <li><a href=""> Inicio </a></li>
-          <li><a href=""> Tienda </a></li>
-          <li><input type="text" name="" id="" /></li>
-          <li>
+        <ul type="none" id="listaNav">
+          
+          <li> <i class="fas fa-search"></i> <input type="text" name="" id="" /></li> 
+          <br>
+          <li class="lihorizontal"><a href=""> Inicio </a></li>
+          <li class="lihorizontal"><a href=""> Tienda </a></li>
+          <li class="lihorizontal">
             <a href=""> <i class="fas fa-shopping-cart"></i> </a>
           </li>
-          <li>
+          <li class="lihorizontal" >
             <a href=""> <i class="fas fa-user-circle"></i> </a>
           </li>
         </ul>
@@ -37,9 +52,25 @@
         Jorge Isidro Hernandez Ramirez <br />
         Salvador Mendoza Briseño
       </p>
-      <a href=""> <i class="fab fa-facebook-square"></i> </a>
-      <a href=""> <i class="fab fa-twitter-square"></i> </a>
-      <a href=""> <i class="fab fa-instagram-square"></i> </a>
+      <div></div>
+
+      <div id="iconosH">
+        <a href=""> <i class="fab fa-facebook-square"></i> </a>
+        <a href=""> <i class="fab fa-twitter-square"></i> </a>
+        <a href=""> <i class="fab fa-instagram-square"></i> </a>
+      </div>
+
+      <ul type="none" id="iconosV">
+        <li>
+          <a href=""> <i class="fab fa-facebook-square"></i> </a>
+        </li>
+        <li>
+          <a href=""> <i class="fab fa-twitter-square"></i> </a>
+        </li>
+        <li>
+          <a href=""> <i class="fab fa-instagram-square"></i> </a>
+        </li>
+      </ul>
     </footer>
   </body>
 </html>
