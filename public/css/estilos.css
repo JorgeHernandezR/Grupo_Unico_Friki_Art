@@ -12,7 +12,7 @@ header {
   color: white;
   padding: 10px;
   margin-bottom: 15px;
-  min-width: 330px;
+  min-width: 390px;
 }
 
 #titulo {
@@ -25,10 +25,40 @@ header {
   margin-right: 10%;
 }
 
+#separacionNav {
+  display: inline-block;
+  width: 30%;
+}
+
+#liBusquedaEscritorio {
+  display: none;
+}
+
+#iconoCarrito,
+#iconoLogin {
+  margin-right: 15px;
+}
+
+#liInicio,
+#liTienda {
+  margin-right: 15px;
+}
+
+#inputBusqueda {
+  max-width: 250px;
+  min-width: 250px;
+}
+
 #listaNav input {
   width: 80%;
 }
 
+#slogan {
+  display: none;
+  font-weight: bold;
+}
+
+/*Estilos para main*/
 main {
   margin: auto;
 }
@@ -38,16 +68,16 @@ main {
   margin-bottom: 10px;
   padding: 10px;
   border: solid 1px gray;
-  box-shadow: 0px 0px 10px rgb(25,25,112);
+  box-shadow: 0px 0px 10px rgb(25, 25, 112);
   max-width: 300px;
   display: inline-block;
-  }
+}
 
 img {
-    width: 100%;
-    max-width: 280px;
-    max-height: 350px;
-    min-height: 350px;
+  width: 100%;
+  max-width: 280px;
+  max-height: 350px;
+  min-height: 350px;
 }
 
 .nombre {
@@ -64,10 +94,12 @@ a {
   color: white;
 }
 
+/*Estilos para el footer*/
 footer {
   background-color: #1e3742;
   padding: 10px;
-}
+  color:white;
+  }
 
 footer p,
 footer ul,
@@ -80,9 +112,52 @@ footer div {
 }
 
 footer div {
-  width: 70%;
+  display: none;
 }
 
 i {
   font-size: 30px;
+}
+
+@media (min-width: 481px) {
+  #separacionNav {
+    width: 47%;
+  }
+
+  #iconosH {
+    display: none;
+  }
+
+  #iconosV {
+    display: inline-block;
+    float: right;
+  }
+
+  footer div {
+    /*display: inline-block;*/
+  }
+}
+
+@media (min-width: 768px) {
+  #liBusqueda {
+    display: inline-block;
+  }
+
+  #liBusquedaEscritorio {
+    display: inline-block;
+  }
+
+  #liBusquedaMobile {
+    display: none;
+  }
+
+  #separacionNav {
+    width: 25%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #slogan {
+    display: inline-block;
+  }
 }
