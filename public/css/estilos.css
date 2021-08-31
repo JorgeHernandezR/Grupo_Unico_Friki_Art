@@ -1,3 +1,13 @@
+/*Pagina de iconos: 
+https://fontawesome.com/icons?d=gallery&m=free
+  Etiqueta de para hacer funcionar los iconos: 
+   <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+
+*/
+
 * {
   box-sizing: border-box;
 }
@@ -144,7 +154,6 @@ i {
   }
 
   #iconosV {
-    display: inline-block;
     float: right;
   }
 
