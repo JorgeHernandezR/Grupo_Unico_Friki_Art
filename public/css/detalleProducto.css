@@ -1,0 +1,17 @@
+main ul {
+    display: inline-block;
+    top: 20px;
+
+    
+}
+
+
+
+main img{
+    
+    width: 100%;
+    max-width: 280px;
+    max-height: 350px;
+    min-height: 350px;
+}
+
