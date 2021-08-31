@@ -1,8 +1,25 @@
-main ul {
+main{
+    position: relative;
+}
+main #listaDescripcion {
     display: inline-block;
-    top: 20px;
+    margin-left: 4%;
+    position: absolute;
 
     
+}
+main #listaBoton {
+    display: inline-block;
+    margin-left: 58%;
+    position: absolute;
+    margin-top: 5%;
+
+    
+}
+
+
+.descripcion{
+    text-align: justify;
 }
 
 
@@ -15,3 +32,10 @@ main img{
     min-height: 350px;
 }
 
+img{
+    box-shadow: 0px 0px 30px rgb(25, 25, 112);
+}
+
+button{
+    box-shadow: 0px 0px 10px rgb(25, 25, 112);
+}
