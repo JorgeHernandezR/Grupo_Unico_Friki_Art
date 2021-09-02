@@ -154,6 +154,7 @@ i {
   }
 
   #iconosV {
+    display: inline;
     float: right;
   }
 
