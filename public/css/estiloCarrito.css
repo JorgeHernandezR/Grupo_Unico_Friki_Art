@@ -1,7 +1,11 @@
 button {
-  width: 125px;
-  height: 25px;
+  padding: 5px;
+ /* width: 125px;
+  height: 25px;*/
+}
 
+ #precioDer {
+  display: none;
 }
 
 #mainCarrito img {
@@ -10,7 +14,7 @@ button {
   min-height: 175px;
 }
 
-article{
+article {
   width: 100%;
   margin-bottom: 10px;
   padding: 5px;
@@ -19,7 +23,7 @@ article{
 }
 
 article img {
-  display: inline-block
+  display: inline-block;
 }
 
 #listaElementosArticulo {
@@ -31,3 +35,28 @@ input {
   width: 120px;
 }
 
+#precioTotal,
+#total {
+  display: inline-block;
+}
+
+#bloqueTotal {
+  float: right;
+  padding-right : 33px;
+}
+
+#articuloTotal {
+  height: 100px;
+}
+
+@media (min-width: 768px) {
+  #precioIzq {
+    display: none;
+  }
+
+  #precioDer {
+    display: inline;
+    float: right;
+    margin-right: 30px;
+  }
+}

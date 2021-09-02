@@ -31,27 +31,20 @@
       <h1 id="titulo">Friki Art</h1>
       <nav>
         <ul type="none" id="listaNav">
-          <li id="liBusquedaMobile">
-            <i class="fas fa-search"></i>
-            <input type="text" name="" id="inputBusqueda" />
-          </li>
-          <br />
-          <li class="lihorizontal" id="liInicio"><a href=""> Inicio </a></li>
-          <li class="lihorizontal" id="liTienda"><a href=""> Tienda </a></li>
-          <li id="liBusquedaEscritorio">
-            <i class="fas fa-search"></i>
-            <input type="text" name="" id="inputBusqueda" />
-          </li>
+          
+          <li id="liBusquedaMobile"> <i class="fas fa-search"></i> <input type="text" name="" id="inputBusqueda" /></li> 
+          <br>
+          <li class="lihorizontal" id="liInicio" ><a href="inicio"> Inicio </a></li>  
+          <li class="lihorizontal" id="liTienda"><a href=""> Tienda </a></li>  
+          <li id="liBusquedaEscritorio"> <i class="fas fa-search"></i> <input type="text" name="" id="inputBusqueda" /></li>   
           <div id="separacionNav"></div>
           <li class="lihorizontal" id="iconoLogin">
-            <a href=""> <i class="fas fa-user-circle"></i> </a>
+            <a href="login"> <i class="fas fa-user-circle"></i> </a>
           </li>
           <li class="lihorizontal" id="iconoCarrito">
-            <a href=""> <i class="fas fa-shopping-cart"></i> </a>
+            <a href="carritoCompra"> <i class="fas fa-shopping-cart"></i> </a>
           </li>
-          <li id="slogan">
-            <p>¡El que no compra es porque no tiene dinero!</p>
-          </li>
+          <li id="slogan"> <p>¡El que no compra es porque no tiene dinero!</p></li>
         </ul>
       </nav>
     </header>
@@ -60,7 +53,7 @@
         <img src="/images/Nier.jpeg" alt="Imagen de articulo" />
         <div id="listaElementosArticulo">
           <div class="nombre">Nombre del articulo</div>
-          <div class="precio">$000.00</div>
+          <div class="precio" id="precioIzq">$000.00</div>
           <br />
           <div>
             <i class="fas fa-plus-circle"></i>
@@ -68,17 +61,23 @@
             <i class="fas fa-minus-circle"></i>
           </div>
           <br />
-          <button name="Remover">Remover</button>
+          <button class="boton">Remover</button>
           <br />
           <br />
           <br />
+        </div>
+
+        <div class="precio" id="precioDer">
+          <br />
+          <br />
+          $000.00
         </div>
       </article>
       <article>
         <img src="/images/Nier.jpeg" alt="Imagen de articulo" />
         <div id="listaElementosArticulo">
           <div class="nombre">Nombre del articulo</div>
-          <div class="precio">$000.00</div>
+          <div class="precio" id="precioIzq">$000.00</div>
           <br />
           <div>
             <i class="fas fa-plus-circle"></i>
@@ -86,11 +85,25 @@
             <i class="fas fa-minus-circle"></i>
           </div>
           <br />
-          <button name="Remover">Remover</button>
+          <button class="boton">Remover</button>
           <br />
           <br />
           <br />
         </div>
+        <div class="precio" id="precioDer">
+          <br />
+          <br />
+          $000.00
+        </div>
+      </article>
+      <article id="articuloTotal">
+        <div id="bloqueTotal">
+          <strong id="total">Total: &nbsp &nbsp &nbsp &nbsp &nbsp </strong>
+          <div class="precio" id="precioTotal">$000.00</div>
+          <br>
+          <br>
+          <button class="boton">Realizar compra</button>
+        </div>   
       </article>
     </main>
 
