@@ -15,8 +15,8 @@
       href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/estiloLogin.css" />
     <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/estiloFormato.css" />
     <link rel="stylesheet" href="css/normalize.css" />
     <title>Friki-Art</title>
   </head>
@@ -52,14 +52,18 @@
       </nav>
     </header>
 
-    <article>
-        <strong>Correo electronico:</strong>
-        <div><input type="text"></div>
+    <article id="formato">
+        <strong>Nombre:</strong>
+        <div><input type="text"></div><br>
+        <strong>Apellido:</strong>
+        <div><input type="text"> </div><br>
+        <strong>Correo:</strong>
+        <div><input type="email" value="example@gmail.com"> </div><br>
         <strong>Contraseña:</strong>
-        <div><input type="text"> </div>
-        <button class="boton">Login</button>
-        <a href="">¿Olvidaste tu contraseña?</a>
-        <a href="formatoRegistro">¿No tienes cuenta?, registrate aqui</a>
+        <div><input type="password"> </div><br>
+        <strong>Confirmar Contraseña:</strong>
+        <div><input type="password"> </div><br>
+        <button class="boton"><strong>Registrarme</strong> </button>
     </article>
 
     <footer>
