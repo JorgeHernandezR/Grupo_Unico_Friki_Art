@@ -1,6 +1,7 @@
 button {
-  width: 125px;
-  height: 25px;
+  padding: 5px;
+ /* width: 125px;
+  height: 25px;*/
 }
 
  #precioDer {
@@ -42,6 +43,10 @@ input {
 #bloqueTotal {
   float: right;
   padding-right : 33px;
+}
+
+#articuloTotal {
+  height: 100px;
 }
 
 @media (min-width: 768px) {
