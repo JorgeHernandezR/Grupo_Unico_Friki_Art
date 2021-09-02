@@ -23,5 +23,5 @@ app.get("/detalleProducto", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  res.send("En proceso...");
+  res.sendFile(path.resolve(__dirname,"./views/login.html"));
 });

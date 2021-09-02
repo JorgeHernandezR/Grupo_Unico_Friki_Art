@@ -28,7 +28,7 @@ header {
   color: white;
   padding: 10px;
   margin-bottom: 15px;
-  min-width: 390px;
+  min-width: 420px;
 }
 
 #titulo {
@@ -69,6 +69,10 @@ header {
   width: 80%;
 }
 
+input {
+  border-radius: 7px;
+}
+
 #slogan {
   display: none;
   font-weight: bold;
@@ -102,6 +106,7 @@ article img {
 }
 
 .nombre {
+  color:black;
   font-weight: bold;
   font-size: 18px;
 }
@@ -120,6 +125,7 @@ footer {
   background-color: #1e3742;
   padding: 10px;
   color: white;
+  min-width: 420px;
 }
 
 footer p,
