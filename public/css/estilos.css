@@ -83,9 +83,17 @@ main {
   margin: auto;
 }
 
+#mainIndex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+}
+
 #banner {
   display: none;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .articulo {
@@ -95,6 +103,7 @@ main {
   border: solid 1px gray;
   box-shadow: 0px 0px 10px rgb(25, 25, 112);
   max-width: 300px;
+  min-height: 380px;
   display: inline-block;
 }
 
@@ -153,6 +162,10 @@ i {
 @media (min-width: 481px) {
   #separacionNav {
     width: 47%;
+  }
+
+  .articulo {
+    min-width: 280px;
   }
 
   #banner {
