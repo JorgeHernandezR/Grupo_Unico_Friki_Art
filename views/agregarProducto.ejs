@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('partials/head')%>
+    <title>Añadir producto</title>
+    <link rel="stylesheet" href="/stylesheets/estilos.css">
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/estiloLogin.css">
+</head>
+<body>
+    <%-include('partials/header')%>
+    <h2 class="titulo">Añadir un nuevo producto</h2>
+    <form action="">
+        <article>
+        <strong>Nombre del producto:</strong>
+        <div><input type="text" name="nombre"></div><br>
+        <strong>Categoria:</strong>
+        <div>
+            <select name="categoria" class="campo">
+                <option value="">Videojuegos</option>
+                <option value="">Cosplay</option>
+                <option value="">Jueguetes</option>
+                <option value="">Maquillaje</option>
+            </select>
+        </div>
+        <br>
+        <strong>Descripcion: </strong>
+        <div><textarea name="descripcion " class ="" cols="30" rows="10"></textarea> </div><br>
+        <strong>Precio:</strong>
+        <div><input type="number" name="precio"> </div><br>
+        <strong>Imagen:</strong>
+        <div><input type="file"> </div><br>
+        <button class="boton"><strong>Guardar</strong> </button>
+    </article>
+    </form>
+
+    <%-include('partials/footer')%>
+    
+</body>
+</html>

@@ -3,6 +3,10 @@ article {
     min-width: 420px
 }
 
+.titulo{
+    text-align: center ;
+}
+
 article * {
     display : block;
     margin-bottom: 10px;
@@ -17,6 +21,18 @@ article div input {
     margin: auto;
     width: 330px;
     height: 30px;
+}
+
+.campo {
+    margin: auto;
+    width: 330px;
+    height: 30px;
+}
+
+textarea {
+    margin: auto;
+    width: 330px;
+    height: 90px;
 }
 
 article button {
