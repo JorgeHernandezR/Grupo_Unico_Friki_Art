@@ -4,6 +4,9 @@ const controlador = {
     },
     carritoCompra: function(req,res) {
         res.render('carritoCompra');
+    },
+    agregarProducto: function(req,res) {
+        res.render('agregarProducto');
     }
 }
 
