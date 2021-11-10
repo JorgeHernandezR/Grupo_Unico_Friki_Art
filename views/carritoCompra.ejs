@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
     <%-include('partials/head')%>
     <link rel="stylesheet" href="/stylesheets/estiloCarrito.css" />
     <link rel="stylesheet" href="/stylesheets/estilos.css" />
     <link rel="stylesheet" href="/stylesheets/normalize.css" />
+  </head>
+   
 
     
   <style>
@@ -13,7 +16,10 @@
   </style>
 
   <body>
-  <%-include('partials/header')%>
+    <header>
+ <%-include('partials/header')%>
+    </header>
+ 
     <main id="mainCarrito">
       <article>
         <img src="/images/Nier.jpeg" alt="Imagen de articulo" />
@@ -72,7 +78,9 @@
         </div>   
       </article>
     </main>
-
-    <%-include('partials/head')%>
+<footer>
+  <%-include('partials/footer')%>
+</footer>
+    
   </body>
 </html>
