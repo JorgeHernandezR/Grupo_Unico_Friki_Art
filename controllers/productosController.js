@@ -1,9 +1,9 @@
 const controlador = {
     detalleProducto : function(req,res) {
-        res.render('detalleProducto');
+        res.render('productos/detalleProducto');
     },
     carritoCompra: function(req,res) {
-        res.render('carritoCompra');
+        res.render('productos/carritoCompra');
     }
 }
 
