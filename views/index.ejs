@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   
-  <%-include('Parsials/head')%>
+  <%-include('partials/head')%>
     <link rel="stylesheet" href="/stylesheets/estilos.css" />
     <link rel="stylesheet" href="/stylesheets/normalize.css" />
     <title>Friki-Art</title>
@@ -13,27 +13,7 @@
     }
   </style>
   <body>
-    <header>
-      <h1 id="titulo">Friki Art</h1>
-      <nav>
-        <ul type="none" id="listaNav">
-          
-          <li id="liBusquedaMobile"> <i class="fas fa-search"></i> <input type="text" name="" id="inputBusqueda" /></li> 
-          <br>
-          <li class="lihorizontal" id="liInicio" ><a href="inicio"> Inicio </a></li>  
-          <li class="lihorizontal" id="liTienda"><a href=""> Tienda </a></li>  
-          <li id="liBusquedaEscritorio"> <i class="fas fa-search"></i> <input type="text" name="" id="inputBusqueda" /></li>   
-          <div id="separacionNav"></div>
-          <li class="lihorizontal" id="iconoLogin">
-            <a href="login"> <i class="fas fa-user-circle"></i> </a>
-          </li>
-          <li class="lihorizontal" id="iconoCarrito">
-            <a href="carritoCompra"> <i class="fas fa-shopping-cart"></i> </a>
-          </li>
-          <li id="slogan"> <p>¡El que no compra es porque no tiene dinero!</p></li>
-        </ul>
-      </nav>
-    </header>
+  <%-include('partials/header')%>
     <main id="mainIndex">
 
       <img src="/images/banner.jpg" alt="esperanding" id="banner"/> 
@@ -73,6 +53,6 @@
 
     </main>
 
- <%-include('Parsials/footer')%>
+ <%-include('partials/footer')%>
   </body>
 </html>
