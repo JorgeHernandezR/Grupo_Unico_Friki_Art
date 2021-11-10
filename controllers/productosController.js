@@ -7,6 +7,9 @@ const controlador = {
     },
     agregarProducto: function(req,res) {
         res.render('agregarProducto');
+    },
+    editarProducto: function(req,res) {
+        res.render('editarProducto');
     }
 }
 
