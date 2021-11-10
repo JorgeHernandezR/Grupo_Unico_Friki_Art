@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
     <%-include('partials/head')%>
     <link rel="stylesheet" href="/stylesheets/detalleProducto.css">
     <link rel="stylesheet" href="/stylesheets/estilos.css" />
     <link rel="stylesheet" href="/stylesheets/normalize.css" />
+  </head>
+   
 
   <style>
     a {
@@ -11,7 +14,10 @@
     }
   </style>
   <body>
-    <%-include('partials/header')%>
+    <header>
+      <%-include('partials/header')%>
+    </header>
+   
     <main >
       
       <div class="principalDiv">
@@ -35,7 +41,10 @@
           </div>
         </div>
     </main>
+    <footer>
+      <%-include('partials/footer')%>
+    </footer>
    
-    <%-include('partials/footer')%>
+    
   </body>
 </html>
