@@ -1,0 +1,46 @@
+[
+  {
+      "identificador": "1",
+      "nombre":"Salvador",
+      "apellido": "Mendoza Briseño",
+      "email": "salvadormendoza@gmail.com",
+      "contraseña": "1234",
+      "categoria": "administrador",
+      "imagen": ""
+  },
+  {
+    "identificador": "2",
+    "nombre":"Jorge Isidro ",
+    "apellido": "Hernández Ramírez",
+    "email": "jorgehernandez@gmail.com",
+    "contraseña": "1234",
+    "categoria": "administrador",
+    "imagen": ""
+},
+{
+    "identificador": "3",
+    "nombre":"Celeste",
+    "apellido": "Art",
+    "email": "celesteArt@gmail.com",
+    "contraseña": "1234",
+    "categoria": "administrador",
+    "imagen": ""
+},
+{
+    "identificador": "4",
+      "nombre":"Nocturna",
+      "apellido": "art",
+      "email": "nocturnaArt@gmail.com",
+      "contraseña": "1234",
+      "categoria": "administrador",
+      "imagen": ""
+  }
+
+
+  
+
+
+
+
+
+]
