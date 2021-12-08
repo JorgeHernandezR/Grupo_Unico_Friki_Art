@@ -12,8 +12,14 @@ const controlador = {
     },
     editarProducto: function(req,res) {
         res.render('editarProducto');
+    },
+    actualizarProducto: function(req,res) {
+        res.send('editarProducto');
+    },
+    eliminarProducto: function(req,res) {
+        res.send('eliminar un producto');
+    },
 
-    }
 }
 
 module.exports = controlador;
