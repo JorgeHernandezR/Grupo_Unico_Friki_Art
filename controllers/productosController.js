@@ -20,6 +20,10 @@ const controlador = {
         res.send('eliminar un producto');
     },
 
+    añadirProducto: function(req,res) {
+        res.render('añadirProducto');
+    },
+    
 }
 
 module.exports = controlador;
