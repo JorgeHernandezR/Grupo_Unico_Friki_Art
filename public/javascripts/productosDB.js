@@ -14,8 +14,13 @@ const productosDB = {
         let ruta = path.resolve("data/productos.json");
         fs.writeFileSync(ruta,productosString);
     },
-    obtenerProducto: function () {
+    obtenerProducto: function (id) {
+        let productos = this.obtenerTodos();
+        let producto = productos.filter((producto) => {
+            return producto.id == id;
+        })
 
+        return producto[0];
     },
     actaulizarProducto: function () {
 

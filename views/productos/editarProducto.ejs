@@ -10,7 +10,7 @@
 <body>
     <%-include('../partials/header')%>
     <h2 class="titulo">Editar producto</h2>
-    <form action="">
+    <form method="POST" action="/productos">
         <article>
         <strong>Nombre del producto:</strong>
         <div><input type="text" name="nombre"></div><br>
@@ -23,6 +23,9 @@
                 <option value="maquillaje">Maquillaje</option>
             </select>
         </div>
+        <br>
+        <strong>Colores: </strong>
+        <div><input type="text" name="colores"></div>
         <br>
         <strong>Descripcion: </strong>
         <div><textarea name="descripcion " class ="" cols="30" rows="10"></textarea> </div><br>

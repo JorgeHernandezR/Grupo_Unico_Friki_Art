@@ -2,7 +2,8 @@ let productosDB = require("../public/javascripts/productosDB.js");
 
 const controlador = {
     detalleProducto : function(req,res) {
-        res.render('productos/detalleProducto');
+        let producto = productosDB.obtenerProducto(req.params.id);
+        res.render('productos/detalleProducto',{producto:producto});
     },
     carritoCompra: function(req,res) {
         res.render('productos/carritoCompra');
