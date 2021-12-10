@@ -8,7 +8,7 @@ const controlador = {
         res.render('carritoCompra');
     },
     agregarProducto: function(req,res) {
-        res.render('agregarProducto');
+        res.render('productos/agregarProducto');
     },
     editarProducto: function(req,res) {
         res.render('editarProducto');

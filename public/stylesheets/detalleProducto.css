@@ -4,16 +4,17 @@
 .principalDiv{
     position: relative;
     display: flex;
-    justify-content:flex-start;
+    flex-wrap: wrap;
+    justify-content:space-between;
     
 }
 
 main #imgDetalle{
     max-width: 600x;
     max-height: 600px;
-    min-height: 600px;
+    min-height: 300px;
     box-shadow: 0px 0px 30px rgb(25, 25, 112);
-    margin: 10px;
+    margin: auto;
 }
 
 button{
@@ -22,24 +23,48 @@ button{
     border-bottom: 3px;
 }
 #listaDescripcion{
+  width: 90%;
   max-width: 25vw;
-  padding-left: 35px;
   font-size: 25px;
 }
 #listaBoton{
-      position: absolute;
-      top: 10vw;
-     left: 70vw;
-     z-index: 1;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
 
 }
 .precio{
     font-size: 35px;
     color: #1b3441;
-    text-align: center;
+    text-align: center; 
+    width: 100%;
 }
 #botonAñadir{
     font-size: 30px;
+}
+
+#contenedorBotones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-self: flex-end;
+}
+
+.botonDetalle{
+    width: 90px;
+}
+
+@media (min-width: 768px){
+    #listaBoton,
+    #listaDescripcion {
+        width: 30% ;
+    }
 }
 
 
