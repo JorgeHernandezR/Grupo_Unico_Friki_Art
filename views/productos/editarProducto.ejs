@@ -10,7 +10,7 @@
 <body>
     <%-include('../partials/header')%>
     <h2 class="titulo">Editar producto</h2>
-    <form method="POST" action="/productos">
+    <form method="POST" action="/productos?_method=PUT">
         <article>
         <strong>Nombre del producto:</strong>
         <div><input type="text" name="nombre"></div><br>
