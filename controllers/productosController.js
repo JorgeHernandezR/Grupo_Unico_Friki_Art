@@ -1,3 +1,5 @@
+let productosDB = require("../public/javascripts/productosDB.js");
+
 const controlador = {
     detalleProducto : function(req,res) {
         res.render('productos/detalleProducto');
@@ -7,11 +9,11 @@ const controlador = {
 
         res.render('carritoCompra');
     },
-    agregarProducto: function(req,res) {
+    cargarVistaAgregar: function(req,res) {
         res.render('productos/agregarProducto');
     },
-    editarProducto: function(req,res) {
-        res.render('editarProducto');
+    cargarVistaEditar: function(req,res) {
+        res.render('productos/editarProducto');
     },
     actualizarProducto: function(req,res) {
         res.send('editarProducto');
@@ -21,7 +23,19 @@ const controlador = {
     },
 
     añadirProducto: function(req,res) {
-        res.render('añadirProducto');
+        let productos = productosDB.obtenerTodos();
+        let id = parseInt(productos[productos.length-1].id) + 1;
+        let producto = {
+            id: id,
+            nombre: req.body.nombre,
+            categoria:  req.body.categoria,
+            colores: req.body.colores,
+            descripcion: req.body.descripcion,
+            precio: req.body.precio,
+            imagen: req.body.imagen
+        }
+        productosDB.agregarProducto(producto);
+        res.render("/productos/detalleProducto");
     },
     
 }

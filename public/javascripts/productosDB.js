@@ -7,8 +7,12 @@ const productosDB = {
         let arregloProductos = JSON.parse(productos);
         return arregloProductos;
     },
-    agregarProducto: function () {
-
+    agregarProducto: function (producto) {
+        let productos = this.obtenerTodos();
+        productos.push(producto);
+        let productosString = JSON.stringify(productos);
+        let ruta = path.resolve("data/productos.json");
+        fs.writeFileSync(ruta,productosString);
     },
     obtenerProducto: function () {
 
