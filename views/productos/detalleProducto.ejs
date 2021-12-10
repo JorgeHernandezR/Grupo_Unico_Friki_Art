@@ -17,7 +17,7 @@
 
     <main>
       <div class="principalDiv">
-        <img id="imgDetalle" src="/images/Nier.jpeg" alt="" />
+        <img id="imgDetalle" src="/images/<%= producto.imagen %>" alt="" />
 
         <br />
         <div id="listaDescripcion">
@@ -25,28 +25,26 @@
           <div class="nombre"><%= producto.nombre %></div>
           <br />
           <div class="categoria">Categoria</div>
-          <div class=""><p>Nombre-categoria</p></div>
+          <div class=""><p><%= producto.categoria %></p></div>
           <br />
           <p class="descripcion">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique,
-            beatae repudiandae id quam quia quod repellat aspernatur. Dolores
-            quasi quidem ducimus. Molestias suscipit voluptatem, sit vitae
-            reiciendis minima explicabo ullam.
+            <%= producto.descripcion %>
           </p>
           <div class="colores"><p>Colores</p>
+            <div><p><%= producto.colores %></p></div>
        
         </div>
         </div>
         <br />
         <div id="listaBoton">
           <div class="contenedorCarrito">
-            <div class="precio">$850</div>
+            <div class="precio">$<%= producto.precio %></div>
             <br />
             <button id="botonAñadir">Añadir al carrito</button>
           </div>
 
           <div id="contenedorBotones">
-            <a href="productos/editarProducto"><button class="botonDetalle">Editar</button></a> 
+            <a href="productos/editarProducto/<% producto.id %>"><button class="botonDetalle">Editar</button></a> 
             <button class="botonDetalle">Eliminar</button>
           </div>
         </div>
