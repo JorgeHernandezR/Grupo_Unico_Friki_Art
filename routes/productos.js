@@ -6,13 +6,11 @@ router.get('/carritoCompra', productosController.carritoCompra);
 
 router.get('/detalle/:id', productosController.detalleProducto);
 
-router.get('/agregarProducto', productosController.agregarProducto);
+router.get('/agregarProducto', productosController.cargarVistaAgregar);
 
-router.get('/editarProducto', productosController.editarProducto);
+router.get('/editarProducto/:id', productosController.cargarVistaEditar);
 
 router.post('/',productosController.añadirProducto);
-
-router.get('/:id/editar',productosController.editarProducto);
 
 router.put('/:id', productosController.actualizarProducto);
 
