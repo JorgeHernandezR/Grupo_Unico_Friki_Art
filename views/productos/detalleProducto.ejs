@@ -16,14 +16,13 @@
     <header><%-include('../partials/header')%></header>
 
     <main>
-      <% console.log(producto) %>
       <div class="principalDiv">
         <img id="imgDetalle" src="/images/Nier.jpeg" alt="" />
 
         <br />
         <div id="listaDescripcion">
           <br />
-          <div class="nombre">Nombre Articulo</div>
+          <div class="nombre"><%= producto.nombre %></div>
           <br />
           <div class="categoria">Categoria</div>
           <div class=""><p>Nombre-categoria</p></div>
