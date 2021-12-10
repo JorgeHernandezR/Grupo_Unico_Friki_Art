@@ -5,7 +5,7 @@
         "descripcion": "Videojuego RPG de estilo japones",
         "categoria": "Videojuego",
         "Colores": "",
-        "iamgen": "Nier.jpeg",
+        "imagen": "Nier.jpeg",
         "precio": "1200"
     },
     {
@@ -14,7 +14,7 @@
         "descripcion": "Camiseta de algodon con estampado de yuno dasai",
         "categoria": "Ropa",
         "Colores": "Rojo, blanco",
-        "iamgen": "Camisa Mirai.jpeg",
+        "imagen": "Camisa Mirai.jpeg",
         "precio": "750"
     },
     {
@@ -23,7 +23,7 @@
         "descripcion": "Maquillaje Kim Chic para rostros delicados",
         "categoria": "Maquillaje",
         "Colores": "Diversos",
-        "iamgen": "KinChi.jpeg",
+        "imagen": "KinChi.jpeg",
         "precio": "1700"
     },
     {
@@ -32,7 +32,7 @@
         "descripcion": "Figura de accion coleccionable tipo funko representando a Hatsune Miku",
         "categoria": "Juguetes",
         "Colores": "Unico",
-        "iamgen": "FunkoMiku.jpeg",
+        "imagen": "FunkoMiku.jpeg",
         "precio": "1700"
     }
 ]

@@ -34,6 +34,13 @@ header {
 #titulo {
   text-align: center;
 }
+.botonAgregar{
+  height: 40px;
+  box-shadow: 0px 0px 10px rgb(25, 25, 112);
+  border-radius: 10px;
+  border-bottom: 3px;
+  padding-left: 10px;
+}
 
 /*Estilo para los elemntos de la lista del nav que se mostrarab horizontales*/
 .lihorizontal {
