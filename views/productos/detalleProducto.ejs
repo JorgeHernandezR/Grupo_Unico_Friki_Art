@@ -44,8 +44,11 @@
           </div>
 
           <div id="contenedorBotones">
-            <a href="productos/editarProducto/<% producto.id %>"><button class="botonDetalle">Editar</button></a> 
-            <button class="botonDetalle">Eliminar</button>
+            <a href="editarProducto/<%= producto.id %>"><button class="botonDetalle">Editar</button></a> 
+            <form method="post" action="<%= producto.id %>?_method=DELETE">
+              <button class="botonDetalle">Eliminar</button>
+            </form>
+            
           </div>
         </div>
       </div>

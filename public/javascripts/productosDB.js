@@ -25,7 +25,15 @@ const productosDB = {
     actaulizarProducto: function () {
 
     },
-    eliminarProducto: function () {
+    eliminarProducto: function (id) {
+        let productos = this.obtenerTodos();
+        productos = productos.filter((producto) => {
+            return producto.id != id;
+        })
+        let productosString = JSON.stringify(productos);
+        let ruta = path.resolve("data/productos.json");
+        fs.writeFileSync(ruta,productosString);
+        
 
     },
     leerJSON: function () {

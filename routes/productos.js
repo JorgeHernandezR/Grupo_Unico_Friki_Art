@@ -4,9 +4,9 @@ let productosController = require('../controllers/productosController');
 
 router.get('/carritoCompra', productosController.carritoCompra); 
 
-router.get('/detalle/:id', productosController.detalleProducto);
+router.get('/crearProducto', productosController.cargarVistaCrear);
 
-router.get('/agregarProducto', productosController.cargarVistaAgregar);
+router.get('/:id', productosController.detalleProducto);
 
 router.get('/editarProducto/:id', productosController.cargarVistaEditar);
 

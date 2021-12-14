@@ -2,6 +2,7 @@ let productosDB = require("../public/javascripts/productosDB.js");
 
 const controlador = {
     detalleProducto : function(req,res) {
+        console.log("Entre a detalle");
         let producto = productosDB.obtenerProducto(req.params.id);
         res.render('productos/detalleProducto',{producto:producto});
     },
@@ -10,17 +11,21 @@ const controlador = {
 
         res.render('carritoCompra');
     },
-    cargarVistaAgregar: function(req,res) {
+    cargarVistaCrear: function(req,res) {
         res.render('productos/agregarProducto');
     },
     cargarVistaEditar: function(req,res) {
-        res.render('productos/editarProducto');
+        let producto = productosDB.obtenerProducto(req.params.id);
+        res.render('productos/editarProducto',{producto:producto});
     },
     actualizarProducto: function(req,res) {
         res.send('editarProducto');
     },
     eliminarProducto: function(req,res) {
-        res.send('eliminar un producto');
+        let id = req.params.id;
+        productosDB.eliminarProducto(id);
+        let productos = productosDB.obtenerTodos();
+        res.render('index',{productos: productos});
     },
 
     añadirProducto: function(req,res) {
@@ -36,7 +41,7 @@ const controlador = {
             imagen: req.body.imagen
         }
         productosDB.agregarProducto(producto);
-        res.render("/productos/detalleProducto");
+        res.redirect("/inicio");
     },
     
 }
