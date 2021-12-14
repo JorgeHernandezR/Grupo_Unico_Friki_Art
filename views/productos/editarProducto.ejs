@@ -13,10 +13,10 @@
     <form method="POST" action="/productos?_method=PUT">
         <article>
         <strong>Nombre del producto:</strong>
-        <div><input type="text" name="nombre" value="Nombre"></div><br>
+        <div><input type="text" name="nombre" value=" <%= producto.nombre %>"></div><br>
         <strong>Categoria:</strong>
         <div>
-            <select name="categoria" class="campo">
+            <select name="categoria" class="campo" value="<%= producto.caategoria %>">
                 <option value="videojuegos">Videojuegos</option>
                 <option value="cosplay">Cosplay</option>
                 <option value="juguetes">Jueguetes</option>
@@ -25,12 +25,12 @@
         </div>
         <br>
         <strong>Colores: </strong>
-        <div><input type="text" name="colores"></div>
+        <div><input type="text" name="colores" value=" <%= producto.colores %>"></div>
         <br>
         <strong>Descripcion: </strong>
-        <div><textarea name="descripcion " class ="" cols="30" rows="10"></textarea> </div><br>
+        <div><textarea name="descripcion " class ="" cols="30" rows="10" ><%= producto.descripcion %></textarea> </div><br>
         <strong>Precio:</strong>
-        <div><input type="number" name="precio"> </div><br>
+        <div><input type="number" name="precio" value="<%= producto.precio %>"> </div><br>
         <strong>Imagen:</strong>
         <div><input type="file" name="imagen"> </div><br>
         <button class="boton"><strong>Guardar</strong> </button>
