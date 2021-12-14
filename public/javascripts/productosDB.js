@@ -22,7 +22,17 @@ const productosDB = {
 
         return producto[0];
     },
-    actaulizarProducto: function () {
+    actaulizarProducto: function (producto) {
+        let productos = this.obtenerTodos();
+        let id = producto.id;
+        productos = productos.filter((producto) => {
+            return producto.id != id;
+        })
+        productos.push(producto);
+        let productosString = JSON.stringify(productos);
+        let ruta = path.resolve("data/productos.json");
+        fs.writeFileSync(ruta,productosString);
+
 
     },
     eliminarProducto: function (id) {

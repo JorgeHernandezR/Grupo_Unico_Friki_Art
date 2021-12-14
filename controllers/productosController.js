@@ -19,7 +19,15 @@ const controlador = {
         res.render('productos/editarProducto',{producto:producto});
     },
     actualizarProducto: function(req,res) {
-        res.send('editarProducto');
+        let producto = productosDB.obtenerProducto(req.params.id);
+        producto.nombre= req.body.nombre;
+        producto.categoria=  req.body.categoria;
+        producto.colores= req.body.colores;
+        producto.descripcion= req.body.descripcion;
+        producto.precio= req.body.precio;
+        producto.imagen= req.body.imagen;
+        productosDB.actaulizarProducto(producto);
+        res.redirect('/inicio');
     },
     eliminarProducto: function(req,res) {
         let id = req.params.id;
@@ -41,6 +49,7 @@ const controlador = {
             imagen: req.body.imagen
         }
         productosDB.agregarProducto(producto);
+        console.log(producto);
         res.redirect("/inicio");
     },
     
