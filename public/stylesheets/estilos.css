@@ -17,6 +17,10 @@ body {
   background-color: #b7e3f7;
 }
 
+.errorText {
+  color: red;
+}
+
 .boton {
   box-shadow: 0px 0px 10px rgb(25, 25, 112);
   border-radius: 10px;

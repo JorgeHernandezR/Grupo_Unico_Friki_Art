@@ -1,4 +1,5 @@
 let productosDB = require("../public/javascripts/productosDB.js");
+const {validationResult} = require("express-validator");
 
 const controlador = {
     detalleProducto : function(req,res) {
@@ -37,20 +38,26 @@ const controlador = {
     },
 
     añadirProducto: function(req,res) {
-        let productos = productosDB.obtenerTodos();
-        let id = parseInt(productos[productos.length-1].id) + 1;
-        let producto = {
-            id: id,
-            nombre: req.body.nombre,
-            categoria:  req.body.categoria,
-            colores: req.body.colores,
-            descripcion: req.body.descripcion,
-            precio: req.body.precio,
-            imagen: req.body.imagen
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            let productos = productosDB.obtenerTodos();
+            let id = parseInt(productos[productos.length-1].id) + 1;
+            let producto = {
+                id: id,
+                nombre: req.body.nombre,
+                categoria:  req.body.categoria,
+                colores: req.body.colores,
+                descripcion: req.body.descripcion,
+                precio: req.body.precio,
+                imagen: req.body.imagen
+            }
+            productosDB.agregarProducto(producto);
+            console.log(producto);
+            res.redirect("/inicio");
+        }else{
+            res.render("productos/agregarProducto",{errors: errors.mapped(), oldData: req.body});
         }
-        productosDB.agregarProducto(producto);
-        console.log(producto);
-        res.redirect("/inicio");
+       
     },
     
 }

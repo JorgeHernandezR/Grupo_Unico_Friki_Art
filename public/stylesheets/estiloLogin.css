@@ -23,6 +23,14 @@ article div input {
     height: 30px;
 }
 
+.campoError {
+    border: solid 3px red;
+}
+
+.divError{
+    margin:auto;
+}
+
 .campo {
     margin: auto;
     width: 330px;

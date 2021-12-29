@@ -13,26 +13,61 @@
     <form method="POST" action="/productos">
         <article>
         <strong>Nombre del producto:</strong>
-        <div><input type="text" name="nombre"></div><br>
+        <div><input type="text" name="nombre" 
+              class= "<%= locals.errors && errors.nombre ? 'campoError' : ''%>"
+              value= "<%= locals.oldData && oldData.nombre ? oldData.nombre : '' %>"> 
+            <% if(locals.errors && errors.nombre) {  %>
+                <div class="errorText divError"><%= errors.nombre.msg %></div>
+            <% } %>
+        </div>
+       
+        <br>
         <strong>Categoria:</strong>
         <div>
-            <select name="categoria" class="campo">
-                <option value="videojuegos">Videojuegos</option>
-                <option value="cosplay">Cosplay</option>
-                <option value="juguetes">Jueguetes</option>
-                <option value="maquillaje">Maquillaje</option>
+            <% let categorias = ['Videojuegos', 'Cosplay','Juguetes','Maquillaje','Figuras de accion']; console.log(oldData.categoria) %>
+            <select name="categoria" class="campo <%= locals.errors && errors.categoria  ? 'campoError' : ''%>">
+                <% categorias.forEach ( (categoria) => {%>
+                <option value="<%= categoria%>" <%= locals.oldData && categoria == oldData.categoria ? 'selected' : '' %>> <%= categoria%> </option>
+                <% }) %>
             </select>
+            <% if(locals.errors && errors.categoria) {  %>
+                <div class="errorText divError"><%= errors.categoria.msg %></div>
+            <% } %>
         </div>
         <br>
         <strong>Colores: </strong>
-        <div><input type="text" name="colores"></div>
+        <div><input type="text" name="colores" 
+              class="<%= locals.errors && errors.colores ? 'campoError' : ''%>"
+              value= "<%= locals.oldData && oldData.colores ? oldData.colores : '' %>"
+              >
+            <% if(locals.errors && errors.colores) {  %>
+                <div class="errorText divError"><%= errors.colores.msg %></div>
+            <% } %>
+        </div>
         <br>
         <strong>Descripcion: </strong>
-        <div><textarea name="descripcion" class ="" cols="30" rows="10"></textarea> </div><br>
+        <div><textarea name="descripcion" class ="<%= locals.errors && errors.descripcion ? 'campoError' : ''%>" cols="30" rows="10" value= "<%= locals.oldData && oldData.descripcion ? oldData.descripcion : '' %>"></textarea> 
+            <% if(locals.errors && errors.descripcion) {  %>
+                <div class="errorText divError"><%= errors.descripcion.msg %></div>
+                <% } %>
+        </div>
+        <br>
         <strong>Precio:</strong>
-        <div><input type="number" name="precio"> </div><br>
+        <div><input type="number" name="precio" 
+              class ="<%= locals.errors && errors.precio ? 'campoError' : ''%>"
+              value= "<%= locals.oldData && oldData.precio ? oldData.precio : '' %>"
+              > 
+            <% if(locals.errors && errors.precio) {  %>
+                <div class="errorText divError"><%= errors.precio.msg %></div>
+            <% } %>
+        </div>
+        <br>
         <strong>Imagen:</strong>
-        <div><input type="file" name="imagen"> </div><br>
+        <div><input type="file" name="imagen" class ="<%= locals.errors && errors.imagen ? 'campoError' : ''%>"> 
+            <% if(locals.errors && errors.imagen) {  %>
+                <div class="errorText divError"><%= errors.imagen.msg %></div>
+                <% } %>
+        </div><br>
         <button class="boton"><strong>Guardar</strong> </button>
     </article>
     </form>
