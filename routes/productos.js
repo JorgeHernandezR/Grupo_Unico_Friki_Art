@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 let path = require("path");
 let productosController = require('../controllers/productosController');
+let autenticacion = require('../middlewares/autenticacion');
 const { check } = require("express-validator");
 
 const validaciones = [
@@ -29,7 +30,7 @@ router.get('/carritoCompra', productosController.carritoCompra);
 
 router.get('/crearProducto', productosController.cargarVistaCrear);
 
-router.get('/:id', productosController.detalleProducto);
+router.get('/:id', autenticacion ,productosController.detalleProducto);
 
 router.get('/editarProducto/:id', productosController.cargarVistaEditar);
 

@@ -17,11 +17,6 @@ article strong {
     text-align: center;
 }
 
-article div input {
-    margin: auto;
-    width: 330px;
-    height: 30px;
-}
 
 .campoError {
     border: solid 3px red;

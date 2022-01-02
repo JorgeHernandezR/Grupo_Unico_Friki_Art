@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 let methodOverride = require('method-override');
+let session = require("express-session");
+let recordarUsuarioMiddleWare = require('./middlewares/recodarUsuario');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -22,6 +24,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
+app.use(session({
+  secret: "Friki-Art",
+  resave: false,
+  saveUninitialized: true,
+}));
+app.use(recordarUsuarioMiddleWare);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

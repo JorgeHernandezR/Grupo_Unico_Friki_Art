@@ -14,7 +14,7 @@ footer{
 
    
 }
-article div input {
+.campo {
     margin: auto;
     width: 330px;
     height: 30px;
