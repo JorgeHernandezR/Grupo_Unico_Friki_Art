@@ -1,6 +1,18 @@
 var express = require('express');
 var router = express.Router();
+const path = require("path");
 let usersController = require('../controllers/usersController');
+const multer = require("multer");
+const storage = multer.diskStorage({
+    destination: function (req,file,cb) {
+        cb(null, "./public/images/users");
+    },
+    filename: function (req,file,cb) {
+        cb(null, file.fieldname+"-"+Date.now()+path.extname(file.originalname));
+    }
+});
+
+const uploadFile = multer({storage});
 
 
 /* GET users listing. */
@@ -10,6 +22,6 @@ router.post('/login', usersController.loguear);
 
 router.get('/formatoRegistro', usersController.registro);
 
-router.post("/registrar", usersController.registrarUsuario);
+router.post("/registrar",uploadFile.single("imagen"),usersController.registrarUsuario);
 
 module.exports = router;

@@ -7,6 +7,15 @@ const productosDB = {
         let arregloProductos = JSON.parse(productos);
         return arregloProductos;
     },
+    obtenerUltimoId: function (){
+        let productos = this.obtenerTodos();
+        let ids = productos.map((producto) => {
+            return producto.id; 
+        });
+
+        ids.sort(function (a,b) { return a-b});
+        return ids[ids.length-1];
+    },
     agregarProducto: function (producto) {
         let productos = this.obtenerTodos();
         productos.push(producto);

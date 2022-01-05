@@ -17,6 +17,10 @@
   
 
     <article>
+      <% if (locals.errores) {%>
+        <h5 class="errorText">Error al iniciar sesion, credenciales no validas</h5>
+        <% }%>
+      
       <form action="/users/login" method="post">
         <strong>Correo electronico:</strong>
         <div><input class= "campo" type="text" name="email"></div>

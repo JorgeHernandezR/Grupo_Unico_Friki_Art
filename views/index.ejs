@@ -31,7 +31,7 @@
       <% for(var i=0; i<productos.length; i++) { %> 
       <a href="productos/<%= productos[i].id %>">
         <article class="articulo">
-            <img src="/images/<%= productos[i].imagen %>" alt="esperanding">
+            <img src="/images/productos/<%= productos[i].imagen %>" alt="esperanding">
             <div class="nombre"> <%= productos[i].nombre %></div>
             <div class="precio"> $<%= productos[i].precio %></div>
         </article>

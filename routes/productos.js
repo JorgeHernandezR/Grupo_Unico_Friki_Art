@@ -1,9 +1,21 @@
 var express = require('express');
 var router = express.Router();
 let path = require("path");
-let productosController = require('../controllers/productosController');
+let productosController = require('../controllers/productosController');3
 let autenticacion = require('../middlewares/autenticacion');
 const { check } = require("express-validator");
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+    destination: (req,file,cb) => {
+        cb(null, "./public/images/productos");
+    },
+    filename: (req,file,cb) => {
+        cb(null, file.fieldname+"-"+ Date.now() + path.extname(file.originalname));
+    }
+});
+
+const uploadFile = multer({storage});
 
 const validaciones = [
     check("nombre").notEmpty().withMessage("Debes de introducir un nombre de producto"),
@@ -34,9 +46,9 @@ router.get('/:id', autenticacion ,productosController.detalleProducto);
 
 router.get('/editarProducto/:id', productosController.cargarVistaEditar);
 
-router.post('/',validaciones,productosController.añadirProducto);
+router.post('/',uploadFile.single("imagen") ,validaciones,productosController.añadirProducto);
 
-router.put('/:id',validaciones,productosController.actualizarProducto);
+router.put('/:id',uploadFile.single("imagen"),validaciones,productosController.actualizarProducto);
 
 router.delete("/:id", productosController.eliminarProducto);
 

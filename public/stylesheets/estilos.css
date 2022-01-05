@@ -19,6 +19,7 @@ body {
 
 .errorText {
   color: red;
+  text-align: center;
 }
 
 .boton {

@@ -13,6 +13,7 @@ const controlador = {
         res.render('carritoCompra');
     },
     cargarVistaCrear: function(req,res) {
+        productosDB.obtenerUltimoId();
         res.render('productos/agregarProducto');
     },
     cargarVistaEditar: function(req,res) {
@@ -26,7 +27,10 @@ const controlador = {
         producto.colores= req.body.colores;
         producto.descripcion= req.body.descripcion;
         producto.precio= req.body.precio;
-        producto.imagen= req.body.imagen;
+        if(req.file){
+            producto.imagen= req.file.filename;
+        }
+        
         productosDB.actaulizarProducto(producto);
         res.redirect('/inicio');
     },
@@ -41,7 +45,7 @@ const controlador = {
         let errors = validationResult(req);
         if(errors.isEmpty()){
             let productos = productosDB.obtenerTodos();
-            let id = parseInt(productos[productos.length-1].id) + 1;
+            let id = productosDB.obtenerUltimoId()+1;
             let producto = {
                 id: id,
                 nombre: req.body.nombre,
@@ -49,7 +53,7 @@ const controlador = {
                 colores: req.body.colores,
                 descripcion: req.body.descripcion,
                 precio: req.body.precio,
-                imagen: req.body.imagen
+                imagen: req.file.filename
             }
             productosDB.agregarProducto(producto);
             console.log(producto);
