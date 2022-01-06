@@ -24,4 +24,6 @@ router.get('/formatoRegistro', usersController.registro);
 
 router.post("/registrar",uploadFile.single("imagen"),usersController.registrarUsuario);
 
+router.get("/logout", usersController.logout);
+
 module.exports = router;

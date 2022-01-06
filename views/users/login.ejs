@@ -18,12 +18,13 @@
 
     <article>
       <% if (locals.errores) {%>
-        <h5 class="errorText">Error al iniciar sesion, credenciales no validas</h5>
+        <h5 class="errorText"><%= errores.msg%></h5>
         <% }%>
+
       
       <form action="/users/login" method="post">
         <strong>Correo electronico:</strong>
-        <div><input class= "campo" type="text" name="email"></div>
+        <div><input class= "campo" type="text" name="email" value="<%= locals.oldData && oldData.email ? oldData.email : ''%>"></div>
         <strong>Contraseña:</strong>
         <div><input class= "campo" type="password" name="password"> </div>
         <div><input type="checkbox" name="recordarme"><label for="">Recordarme</label></div>

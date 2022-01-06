@@ -1,24 +1,26 @@
 let productosDB = require("../public/javascripts/productosDB.js");
 const {validationResult} = require("express-validator");
 
+
+
 const controlador = {
     detalleProducto : function(req,res) {
         console.log("Entre a detalle");
         let producto = productosDB.obtenerProducto(req.params.id);
-        res.render('productos/detalleProducto',{producto:producto});
+        res.render('productos/detalleProducto',{producto:producto, usuario:req.session.usuario});
     },
     carritoCompra: function(req,res) {
-        res.render('productos/carritoCompra');
+        res.render('productos/carritoCompra',{usuario:req.session.usuario});
 
         res.render('carritoCompra');
     },
     cargarVistaCrear: function(req,res) {
         productosDB.obtenerUltimoId();
-        res.render('productos/agregarProducto');
+        res.render('productos/agregarProducto',{usuario:req.session.usuario});
     },
     cargarVistaEditar: function(req,res) {
         let producto = productosDB.obtenerProducto(req.params.id);
-        res.render('productos/editarProducto',{producto:producto});
+        res.render('productos/editarProducto',{producto:producto,usuario:req.session.usuario});
     },
     actualizarProducto: function(req,res) {
         let producto = productosDB.obtenerProducto(req.params.id);
@@ -37,8 +39,8 @@ const controlador = {
     eliminarProducto: function(req,res) {
         let id = req.params.id;
         productosDB.eliminarProducto(id);
-        let productos = productosDB.obtenerTodos();
-        res.render('index',{productos: productos});
+        //let productos = productosDB.obtenerTodos();
+        res.redirect('/inicio');
     },
 
     añadirProducto: function(req,res) {
@@ -59,7 +61,7 @@ const controlador = {
             console.log(producto);
             res.redirect("/inicio");
         }else{
-            res.render("productos/agregarProducto",{errors: errors.mapped(), oldData: req.body});
+            res.render("productos/agregarProducto",{errors: errors.mapped(), oldData: req.body, usuario: req.session.usuario});
         }
        
     },

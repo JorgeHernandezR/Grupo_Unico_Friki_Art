@@ -30,6 +30,14 @@ const usersDB = {
         let usuarios = this.obtenerUsuarios();
         usuarios.push(usuario);
         fs.writeFileSync(rutaUsersJson,JSON.stringify(usuarios));
+    },
+    obtenerUsuario: function(id) {
+        let usuarios = this.obtenerUsuarios();
+        let usuarioFiltrado = usuarios.filter((usuario) => {
+            return usuario.id == id;
+        });
+
+        return usuarioFiltrado;
     }
 }
 

@@ -17,6 +17,19 @@ body {
   background-color: #b7e3f7;
 }
 
+#contenedorTitulo {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between
+  ;
+}
+
+#contenedorUsuario {
+  display: inline-block;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
 .errorText {
   color: red;
   text-align: center;
@@ -38,6 +51,9 @@ header {
 
 #titulo {
   text-align: center;
+  font-size: 45px;
+  display: inline-block;
+
 }
 .botonAgregar{
   height: 40px;

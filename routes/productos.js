@@ -36,7 +36,8 @@ const validaciones = [
             }
         }
     })
-] 
+];
+
 
 router.get('/carritoCompra', productosController.carritoCompra); 
 

@@ -6,8 +6,11 @@ const obtenerProductos = require("../middlewares/obtenerProductos");
 
 /* GET home page. */
 router.get('/inicio',obtenerProductos,function(req, res, next) {
-  console.log("Productos del index: "+req.productos);
-  res.render('index',{productos: req.productos});
+  let usuario;
+  if(req.session.usuario){
+    usuario = req.session.usuario;
+  }
+  res.render('index',{productos: req.productos, usuario: usuario});
 });
 
 module.exports = router;
