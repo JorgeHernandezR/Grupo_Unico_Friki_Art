@@ -26,4 +26,6 @@ router.post("/registrar",uploadFile.single("imagen"),usersController.registrarUs
 
 router.get("/logout", usersController.logout);
 
+router.get("/:id", usersController.detalleUsuario);
+
 module.exports = router;

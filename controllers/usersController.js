@@ -11,9 +11,9 @@ const controlador = {
     usuarios.forEach(usuario => {
       if (usuario.email == req.body.email && bcrypt.compareSync(req.body.password,usuario.password)){
 
-        req.session.usuario = {nombre: usuario.nombre +" "+usuario.apellido,imagen: usuario.imagen, categoria: usuario.categoria} ;
+        req.session.usuario = {nombre: usuario.nombre +" "+usuario.apellido,imagen: usuario.imagen, categoria: usuario.categoria};
         if(req.body.recordarme){
-          res.cookie("usuario", usuario.identificador,{maxAge: 6000000});
+          res.cookie("usuario", usuario.id,{maxAge: 6000000});
         }
         res.redirect("/inicio");
         
@@ -23,6 +23,7 @@ const controlador = {
   },
   logout: function (req,res,next) {
     req.session.usuario = undefined;
+    res.clearCookie("usuario");
     res.redirect("/inicio");
   },
   registro: function (req, res, next) {
@@ -42,6 +43,12 @@ const controlador = {
 
     usersDB.registrarUsuario(usuario);
     res.render("users/login");
+  },
+
+  detalleUsuario: function (req,res,next) {
+    let usuario = usersDB.obtenerUsuario(req.params.id);
+
+    res.render("users/perfil",{usuarioDetalle: usuario, usuario: req.session.usuario});
   }
 };
 

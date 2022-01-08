@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="/stylesheets/estiloLogin.css">
 </head>
 <body>
-    <%-include('../partials/header')%>
+    <% if (locals.usuario) {%>
+        <%-include('../partials/header', {usuario: usuario})%>
+        <% } else {%>
+        <%-include('../partials/header')%>
+        <%}%>
     <h2 class="titulo">Añadir un nuevo producto</h2>
     <form method="POST" action="/productos" enctype="multipart/form-data">
         <article>

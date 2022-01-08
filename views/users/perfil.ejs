@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/estiloPerfil.css" />
+    <link rel="stylesheet" href="/stylesheets/estilos.css" />
+    <link rel="stylesheet" href="/stylesheets/normalize.css" />
+    <title>Perfil de usuario</title>
+  </head>
+  <body>
+    <% if (locals.usuario) {%> <%-include('../partials/header', {usuario:
+    usuario})%> <% } else {%> <%-include('../partials/header')%> <%}%>
+
+    <div id="contenedorPrincipal">
+      <div id="contenedorFoto">
+        <div id="contenedorFotoPeque">
+          <img id="fotoPerfil" src="/images/Nier.jpeg" alt="No halle nada" />
+        </div>
+      </div>
+      .
+      <div id="contenedorDetalles">
+        <div>Nombre de usuario</div>
+        <p>Nombre comnpleto</p>
+        <div>Apellidos</div>
+        <p>Apellidos</p>
+        <div>Correo electronico</div>
+        <p>Example@gmail.com</p>
+        <div>Categoria</div>
+        <p>Cliente</p>
+      </div>
+      <div id="contenedorBotones">
+        <button class="boton">Editar perfil</button>
+      </div>
+    </div>
+
+    <%- include("../partials/footer")%>
+  </body>
+</html>

@@ -16,7 +16,11 @@
 
   <body>
     <header>
- <%-include('../partials/header')%>
+      <% if (locals.usuario) {%>
+        <%-include('../partials/header', {usuario: usuario})%>
+        <% } else {%>
+        <%-include('../partials/header')%>
+        <%}%>
     </header>
  
     <main id="mainCarrito">

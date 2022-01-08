@@ -37,7 +37,7 @@ const usersDB = {
             return usuario.id == id;
         });
 
-        return usuarioFiltrado;
+        return usuarioFiltrado[0];
     }
 }
 
