@@ -23,6 +23,7 @@ const controlador = {
         res.render('productos/editarProducto',{producto:producto,usuario:req.session.usuario});
     },
     actualizarProducto: function(req,res) {
+        console.log(req.body);
         let producto = productosDB.obtenerProducto(req.params.id);
         producto.nombre= req.body.nombre;
         producto.categoria=  req.body.categoria;

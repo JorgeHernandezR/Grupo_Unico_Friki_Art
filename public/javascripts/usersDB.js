@@ -38,6 +38,15 @@ const usersDB = {
         });
 
         return usuarioFiltrado[0];
+    },
+    actualizarUsuario: function (usuario) {
+        let usuarios = this.obtenerUsuarios();
+     usuarios = usuarios.filter((usuarioElement) => {
+            return usuarioElement.id != usuario.id
+        })
+
+        usuarios.push(usuario);
+        fs.writeFileSync(rutaUsersJson, JSON.stringify(usuarios));
     }
 }
 

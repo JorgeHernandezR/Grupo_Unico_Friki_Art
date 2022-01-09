@@ -30,8 +30,12 @@
 }
 
 #fotoPerfil {
-    max-height: 120px;
-    max-width: 120px;
+    max-height: 170px;
+    max-width: 170px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+
 }
 
 @media (min-width: 768px) {

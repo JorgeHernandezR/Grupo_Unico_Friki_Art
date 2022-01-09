@@ -11,7 +11,7 @@ const controlador = {
     usuarios.forEach(usuario => {
       if (usuario.email == req.body.email && bcrypt.compareSync(req.body.password,usuario.password)){
 
-        req.session.usuario = {nombre: usuario.nombre +" "+usuario.apellido,imagen: usuario.imagen, categoria: usuario.categoria};
+        req.session.usuario = {id: usuario.id,nombre: usuario.nombre +" "+usuario.apellido,imagen: usuario.imagen, categoria: usuario.categoria};
         if(req.body.recordarme){
           res.cookie("usuario", usuario.id,{maxAge: 6000000});
         }
@@ -41,6 +41,8 @@ const controlador = {
       imagen: req.file.filename
     }
 
+    console.log(req.body);
+
     usersDB.registrarUsuario(usuario);
     res.render("users/login");
   },
@@ -49,7 +51,27 @@ const controlador = {
     let usuario = usersDB.obtenerUsuario(req.params.id);
 
     res.render("users/perfil",{usuarioDetalle: usuario, usuario: req.session.usuario});
-  }
-};
+  },
 
+  cargarVistaEditar: function (req,res,next) {
+    let usuarioEditar = usersDB.obtenerUsuario(req.params.id);
+
+    res.render("users/editarUsuario", {usuario: req.session.usuario, usuarioEditar: usuarioEditar});
+
+  },
+  editarUsuario: function (req,res){
+   let usuario = usersDB.obtenerUsuario(req.params.id);
+   usuario.nombre = req.body.nombre;
+   usuario.apellido = req.body.apellido;
+   usuario.email = req.body.email;
+   usuario.categoria = req.body.categoria;
+   if(req.file){
+     usuario.imagen = req.file.filename;
+   }
+   req.session.usuario = { id: usuario.id,nombre: usuario.nombre+" "+usuario.apellido, imagen: usuario.imagen, categoria: usuario.categoria};
+
+   usersDB.actualizarUsuario(usuario);
+   res.redirect("/users/"+usuario.id);
+  },
+};
 module.exports = controlador;

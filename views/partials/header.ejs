@@ -4,7 +4,7 @@
       <% if (locals.usuario) {%>
         <p id="contenedorUsuario">
       <img style="max-width: 40px; max-height: 40px;" src="/images/users/<%= usuario.imagen%>" alt="nothing">
-      <span><%= usuario.nombre%> (<a href="/users/logout">Cerrar sesion</a>)</span>
+      <span><a class="linkUsuario" href="/users/<%= usuario.id%>"><%= usuario.nombre%></a> (<a class="linkUsuario" href="/users/logout">Cerrar sesion</a>)</span>
     </p>
       <% } %></div>
     <nav>
