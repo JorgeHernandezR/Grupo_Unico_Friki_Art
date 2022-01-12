@@ -26,7 +26,7 @@ router.post("/registrar",uploadFile.single("imagen"),usersController.registrarUs
 
 router.get("/logout", usersController.logout);
 
-router.get("/editar/:id", usersController.cargarVistaEditar);
+router.get("/editar/:id", usersController.cargarVistaEditar); 
 
 router.put("/:id",uploadFile.single("imagen") , usersController.editarUsuario); 
 
