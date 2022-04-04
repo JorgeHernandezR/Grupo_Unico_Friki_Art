@@ -35,6 +35,36 @@ module.exports = (sequelize, DataTypes) => {
 
     const Product= sequelize.define("Product", cols, config);
 
+    Product.associate = function(modelos) {
+
+        Product.belongsTo(modelos.Category, {
+            as: "categories",
+            foreignKey: "category"
+        });
+
+        Product.belongsTo(modelos.Brand, {
+            as: "brands",
+            foreignKey: "brand"
+        });
+
+        Product.belongsToMany(modelos.Color, {
+            as: "colors",
+            through: "product_color",
+            foreignKey: "product_id",
+            otherKey: "color_id",
+            timestamps: false
+        });
+
+        Product.belongsToMany(modelos.Shoping_car, {
+            as: "shopping_products",
+            through: "shopping_product",
+            foreignKey: "product_id",
+            otherKey: "shopping_id",
+            timestamps: false
+        });
+
+    }
+
     return  Product;
 
 }

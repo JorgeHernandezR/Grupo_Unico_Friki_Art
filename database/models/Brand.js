@@ -20,6 +20,13 @@ module.exports = (sequelize, DataTypes) => {
 
     const Brand= sequelize.define("Brand", cols, config);
 
+    Brand.associate = function(modelos) {
+        Brand.hasMany(modelos.Product, {
+            as: "brands",
+            foreignKey: "brand"
+        })
+    }
+
     return Brand;
 
 }

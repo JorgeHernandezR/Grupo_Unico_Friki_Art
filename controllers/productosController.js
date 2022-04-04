@@ -1,4 +1,5 @@
 let productosDB = require("../public/javascripts/productosDB.js");
+const Productos = require("../database/models/Product.js");
 const { validationResult } = require("express-validator");
 
 const controlador = {
